@@ -15,6 +15,10 @@ const postSchema = new mongoose.Schema(
             type: String,
             index: true,
         },
+        views: {
+            type: Number,
+            default: 0
+        },
         hashTags: [
             {
                 type: String
