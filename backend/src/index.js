@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import connectDB from './db/index.js';
 import { app } from './app.js';
 
+const PORT = process.env.POST || 8000
 
 dotenv.config({
     path: './.env'
@@ -14,8 +15,8 @@ connectDB()
         console.log('Error: ',error)
     });
 
-    app.listen(process.env.POST || 8000, () => {
-        console.log('App listening on port 3000!');
+    app.listen(PORT, () => {
+        console.log(`App listening on port ${PORT}!`);
     });
 })
 .catch((error)=>{
